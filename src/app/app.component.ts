@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   isCorrect = false;
-  isModified = true;
+  isModified = false;
   isCancelled = false;
   styles = {};
   classes = {};
+
+
   ngOnInit(): void {
     this.styles = {
       'font-size': this.isCorrect ? '2rem' : '8rem',
