@@ -1,33 +1,11 @@
-<p *ngIf="isCorrect">ngif true</p>
-
-<p *ngIf="!isCorrect">ngif false</p>
-
-<p *ngIf="isCorrect; else elseCond">ngif true</p>
-<ng-template #elseCond>else condition</ng-template>
-<hr>
-<ng-container *ngIf="isCorrect; else elseTemplate">
-  true
-</ng-container>
-<ng-template #elseTemplate>
-  else false
-</ng-template>
-<hr>
-<p>using ngfor...........</p>
-<p *ngFor="let user of users">{{user}}</p>
-<hr>
-<p>using ngfor by index.........</p>
-<p *ngFor="let user of users; let i=index">{{i + ':' + user}}</p>
-<hr>
-<p>using ngfor by index for object.........</p>
-<p *ngFor="let user of usersObject; let i=index">{{user.id + ':' + user.name}}</p>
-<hr>
-<p>using ngfor by index for object, adding button.........</p>
-<button [ngStyle]="styles" (click)="addUser()">Add User</button>
-<p *ngFor="let user of usersObject; let i=index">{{user.id + ':' + user.name}}</p>
-<hr>
-<p>using ngfor by index for object and trackBy, adding button.........</p>
-<button [ngStyle]="styles" (click)="addUser()">Add User</button>
-<p *ngFor="let user of usersObject; let i=index; trackBy:trackByFunc">{{user.id + ':' + user.name}}</p>
-<hr>
-
+<!-- Sending data from parent to child by input-->
+<p>Sending data from parent to child </p>
+<p>in this case @input decorator must be declared in child component</p>
+<app-star [rating]=5 (starCicked)="onStarClicked($event)"></app-star>
+<app-star [rating]=4.5 (starCicked)="onStarClicked($event)"></app-star>
+<app-star [rating]=3.5 (starCicked)="onStarClicked($event)"></app-star>
+<app-star [rating]=2 (starCicked)="onStarClicked($event)"></app-star>
+<app-star [rating]=4 (starCicked)="onStarClicked($event)"></app-star>
+<app-star [rating]=1.5 (starCicked)="onStarClicked($event)"></app-star>
+<p > 3- (starCicked)="onStarClicked($event) is used for receiving data from child</p>
 
