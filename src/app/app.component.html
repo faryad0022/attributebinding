@@ -1,11 +1,6 @@
-<!-- Sending data from parent to child by input-->
-<p>Sending data from parent to child </p>
-<p>in this case @input decorator must be declared in child component</p>
-<app-star [rating]=5 (starCicked)="onStarClicked($event)"></app-star>
-<app-star [rating]=4.5 (starCicked)="onStarClicked($event)"></app-star>
-<app-star [rating]=3.5 (starCicked)="onStarClicked($event)"></app-star>
-<app-star [rating]=2 (starCicked)="onStarClicked($event)"></app-star>
-<app-star [rating]=4 (starCicked)="onStarClicked($event)"></app-star>
-<app-star [rating]=1.5 (starCicked)="onStarClicked($event)"></app-star>
-<p > 3- (starCicked)="onStarClicked($event) is used for receiving data from child</p>
+
+<div class="container mb-5 mt-5">
+    <app-adduser (onAddUserClicked)="userAdded($event)"></app-adduser>
+</div>
+<app-usertable [users]="users"></app-usertable>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from './app-interface';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-
+  users: User[] = [];
   ngOnInit(): void {
   }
-
-  // tslint:disable-next-line:typedef
-  onStarClicked(rating: number){
-    console.log(rating);
+  userAdded(users: User[]): void {
+    this.users = users;
   }
+
 }
