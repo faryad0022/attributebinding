@@ -1,68 +1,22 @@
-<div class="container mt-5 mb-5" style="border-bottom: black dotted 2px;">
-    <h2>Local Reference Learning</h2>
-    <br />
-    <input type="text" placeholder="your text" #inputName>
-    <br />
-    <br />
-
-    <button class="btn btn-info ml-3 mb-5" (click)="onClick(inputName)">Click Me</button>
-
-
-</div>
 <div class="container">
-    <h2 class="mb-3">View Child Learning</h2>
-    <div class="alert alert-warning mt-3" role="alert">
-        <ul>
-            <li>
-                View child is in access when view is completely initialized, so it must be initialized in
-                ngAfterViewInit()
-            </li>
-            <li>
-                If in some siyuation want to access the element or object befor all view initialized, <strong>static:
-                    true</strong> must me added to view child
-            </li>
-            <li>
-                By using <strong>static: true</strong> program is beaing heavy, its better to dont use it
-            </li>
-            <li>
-                Reading from ElementRef is Secured but changing it caused <strong>XSS</strong> attack
-            </li>
-            <li>
-                To change the value of the elementref use the <strong>Renderer2</strong>  
-                <br/>
-                <strong>Sample Code:  </strong>    this.renderer.setStyle(this.far.nativeElement, 'color', 'red');
-
-            </li>
-            <li>
-                Accessing to other component by viewChild adding the name of component and fill the read by the component name:
-                
-            </li>
-        </ul>
-    </div>
-    <div class="alert alert-danger"  role="alert">
-        <ul >
-            <li >
-                Modify in ElementRef cause <strong>XSS</strong>  attack.
-            </li>
-            <li>
-                This Line is completely wrong
-                <br/>
-                this.far.nativeElement.innerHTML = 'From AppComponent is changed in ngOnInit';
-
-            </li>
-        </ul>
-    </div>
-    <p #par>from app component</p>
-    <p #far>from app component in oniniti</p>
-    <app-inc></app-inc>
-    <app-inc></app-inc>
-    <app-inc></app-inc>
-    <app-inc></app-inc>
-    <app-inc></app-inc>
-    <app-inc></app-inc>
-    <app-inc></app-inc>
-
-    <br/>
-    <a href="https://www.youtube.com/watch?v=ZRe1j1N28N8&list=PL2PvMqF3LmjZeFPfdCHw2OQi8NF6YumKr&index=12" target="_blank" rel="noopener noreferrer">Source Video</a>
+    <div class="alert alert-info mt-5" role="alert">
+    <ul>
+        <li>
+            <strong>@ContentChild</strong> is used in child component to read localrefrence value from parent component's Element 
+        </li>
+        <li>
+            <strong>@ViewChild</strong> is used in parent component to read localrefrence value in its component.html 
+        </li>
+    </ul>
 </div>
 
+
+<app-users>
+    <p>Hello From AppComponent inside the <strong>app-users</strong></p>
+    <p>Show tags inside the <strong>app-users</strong> in appcomponent</p>
+    <p class="error">Show tag by class selector</p>
+    <p id="byId">Show tag by id </p>
+    <p #far>Pass to children by localrefrence</p>
+</app-users>
+<button class="btn btn-info" (click)="Change()">Change Content</button>
+</div>
