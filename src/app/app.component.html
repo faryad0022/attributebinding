@@ -1,22 +1,4 @@
 <div class="container mt-5">
-    <app-user [user]="user"></app-user>
-    <select>
-        <option *ngFor='let user of users'>
-            {{user.email}} ({{user.age}})
-        </option>
-
-    </select>
-</div>
-
-
-<div class="container mt-5">
-    <select (change)="onChange($event.target)">
-        <ng-container *ngFor='let user of users'>
-            <ng-container *ngIf="user.age < 40">
-                <option [value] = "user.email">
-                    {{user.email}} ({{user.age}})
-                </option>
-            </ng-container>
-        </ng-container>
-    </select>
+    <input type="text" appColorful style="width: 50rem; border-width: 0.2rem"> 
+    <p appHighLight [highLightColor] = "color">Hello Word</p>
 </div>

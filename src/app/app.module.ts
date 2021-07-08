@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
+import { ColorfulDirective } from './shared/directives/colorful.directive';
+import { HighLightDirective } from './shared/directives/highLight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
+    ColorfulDirective,
+    HighLightDirective
   ],
   imports: [
     BrowserModule,
