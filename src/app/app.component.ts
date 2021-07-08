@@ -7,13 +7,37 @@ import { User } from './app-interface';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  @ViewChild('far') far!: ElementRef;
- constructor(private renderer: Renderer2){}
+  user: User = {
+    email: 'a@a.com',
+    address: 'valiasr',
+    password: '123',
+    age: 40
+  };
+  users: User[] = [
+    this.user,
+    {
+      email: 'b@b.com',
+      address: 'valiasr21',
+      password: '123',
+      age: 30
+    },
+    {
+      email: 'c@c.com',
+      address: 'valiasr234',
+      password: '123',
+      age: 31
+    },
+    {
+      email: 'd@d.com',
+      address: 'valiasr12321',
+      password: '123',
+      age: 25
+    },
+  ];
+  constructor(private renderer: Renderer2){}
   ngOnInit(): void {
- }
-
- Change(): void{
-    this.renderer.setStyle(this.far.nativeElement, 'backgroundColor', 'yellow');
-    this.renderer.setProperty(this.far.nativeElement, 'textContent', '12334');
+  }
+  onChange(user: any): void{
+    console.log(user);
   }
 }

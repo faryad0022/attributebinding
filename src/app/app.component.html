@@ -1,22 +1,22 @@
-<div class="container">
-    <div class="alert alert-info mt-5" role="alert">
-    <ul>
-        <li>
-            <strong>@ContentChild</strong> is used in child component to read localrefrence value from parent component's Element 
-        </li>
-        <li>
-            <strong>@ViewChild</strong> is used in parent component to read localrefrence value in its component.html 
-        </li>
-    </ul>
+<div class="container mt-5">
+    <app-user [user]="user"></app-user>
+    <select>
+        <option *ngFor='let user of users'>
+            {{user.email}} ({{user.age}})
+        </option>
+
+    </select>
 </div>
 
 
-<app-users>
-    <p>Hello From AppComponent inside the <strong>app-users</strong></p>
-    <p>Show tags inside the <strong>app-users</strong> in appcomponent</p>
-    <p class="error">Show tag by class selector</p>
-    <p id="byId">Show tag by id </p>
-    <p #far>Pass to children by localrefrence</p>
-</app-users>
-<button class="btn btn-info" (click)="Change()">Change Content</button>
+<div class="container mt-5">
+    <select (change)="onChange($event.target)">
+        <ng-container *ngFor='let user of users'>
+            <ng-container *ngIf="user.age < 40">
+                <option [value] = "user.email">
+                    {{user.email}} ({{user.age}})
+                </option>
+            </ng-container>
+        </ng-container>
+    </select>
 </div>
