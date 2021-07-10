@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
-import { User } from './interfaces/app-interface';
 
 @Component({
   selector: 'app-root',

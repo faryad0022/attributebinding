@@ -12,6 +12,8 @@ import { AdminComponent } from './views/admin/admin.component';
 import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { NotfoundComponent } from './views/notfound/notfound.component';
+import { UserComponent } from './views/user/user.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { FooterComponent } from './layout/footer/footer.component';
     AdminComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NotfoundComponent,
+    UserComponent
    ],
   imports: [
     BrowserModule,

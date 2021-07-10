@@ -1,5 +1,6 @@
 // tslint:disable-next-line:class-name
-export interface User {
+export interface IUser {
+    id: number;
     email: string;
     password: string;
     address: string;
