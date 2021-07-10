@@ -4,10 +4,14 @@ import { Directive, ElementRef, HostBinding, HostListener, Input, Renderer2 } fr
   selector: '[appOpacityChange]'
 })
 export class OpacityChangeDirective {
-  @Input() opacity = '0.1';
+  @Input('appOpacityChange') opacity = '0.1';
   // tslint:disable-next-line:typedef
   @HostListener('mouseenter') onMouseEnter() {
     this.changeOpacity('1');
+  }
+  // tslint:disable-next-line:typedef
+  @HostListener('onclick') onClick() {
+    this.rendere.setStyle(this.elementRef.nativeElement, 'border-color', 'transparent');
   }
     // tslint:disable-next-line:typedef
   @HostListener('mouseleave') onMouseLeave() {
