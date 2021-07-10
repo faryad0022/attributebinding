@@ -23,11 +23,11 @@
     </div>
 
     <div *appCarousel="let image from images; let ctrl = controller">
-        <button appOpacityChange [opacity]="opacity" (click)="ctrl.prev()" type="button" class="btn btn-primary btn-lg">
+        <button appOpacityChange="opacity" (click)="ctrl.prev()" type="button" class="btn btn-primary btn-lg">
             <i class="fas fa-angle-left"></i>
         </button>
         <img style="width: 300px; height: auto;" [src]="image" alt="">
-        <button appOpacityChange [opacity]="opacity" (click)="ctrl.next()" type="button" class="btn btn-primary btn-lg">
+        <button appOpacityChange="opacity" (click)="ctrl.next()" type="button" class="btn btn-primary btn-lg">
             <i class="fas fa-angle-right"></i>
         </button>
 
