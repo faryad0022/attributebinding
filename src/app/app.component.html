@@ -1,35 +1,26 @@
-<div class="container mt-5">
-    <input type="text" appColorful style="width: 50rem; border-width: 0.2rem">
-    <p appHighLight [highLightColor]="color">Hello Word</p>
-</div>
-
 <div class="container">
-    <div class="alert alert-primary" role="alert">
-        <ul>
-            <li>
-                In Structural Directive the tmplateRef must be used
-            </li>
-            <li>
-                implicit is a key word to get the default property
-            </li>
-            <li>
-                1 - *appCarousel = structural Directive <br />
-                2 - image = define the variable<br />
-                3 - from variable from dirctive (name of input)<br />
-                4 - images variable from component<br />
-                '*appCarousel="let image from images"'
-            </li>
-        </ul>
-    </div>
-
-    <div *appCarousel="let image from images; let ctrl = controller">
-        <button appOpacityChange="opacity" (click)="ctrl.prev()" type="button" class="btn btn-primary btn-lg">
-            <i class="fas fa-angle-left"></i>
+<nav class="navbar navbar-expand-lg  navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <img style="width: 300px; height: auto;" [src]="image" alt="">
-        <button appOpacityChange="opacity" (click)="ctrl.next()" type="button" class="btn btn-primary btn-lg">
-            <i class="fas fa-angle-right"></i>
-        </button>
-
-    </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/user']" routerLinkActive="active">User</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/admin']" routerLinkActive="active">Admin</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="container mt-2">
+    <router-outlet></router-outlet>
 </div>

@@ -1,0 +1,32 @@
+<input type="text" appColorful style="width: 50rem; border-width: 0.2rem">
+<p appHighLight [highLightColor]="color">Hello Word</p>
+
+<br/>
+<div dir="ltr" class="alert alert-primary" role="alert">
+  <ul>
+      <li>
+          In Structural Directive the tmplateRef must be used
+      </li>
+      <li>
+          implicit is a key word to get the default property
+      </li>
+      <li>
+          1 - *appCarousel = structural Directive <br />
+          2 - image = define the variable<br />
+          3 - from variable from dirctive (name of input)<br />
+          4 - images variable from component<br />
+          '*appCarousel="let image from images"'
+      </li>
+  </ul>
+</div>
+
+<div dir="ltr" *appCarousel="let image from images; let ctrl = controller">
+  <button appOpacityChange="opacity" (click)="ctrl.prev()" type="button" class="btn btn-primary btn-lg">
+      <i class="fas fa-angle-left"></i>
+  </button>
+  <img style="width: 300px; height: auto;" [src]="image" alt="">
+  <button appOpacityChange="opacity" (click)="ctrl.next()" type="button" class="btn btn-primary btn-lg">
+      <i class="fas fa-angle-right"></i>
+  </button>
+
+</div>
