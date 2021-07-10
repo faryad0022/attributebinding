@@ -7,9 +7,11 @@ import { CarouselDirective } from './shared/directives/carousel.directive';
 import { ColorfulDirective } from './shared/directives/colorful.directive';
 import { HighLightDirective } from './shared/directives/highLight.directive';
 import { OpacityChangeDirective } from './shared/directives/opacityChange.directive';
-import { UsersComponent } from './users/users.component';
-import { AdminComponent } from './admin/admin.component';
-import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './views/users/users.component';
+import { AdminComponent } from './views/admin/admin.component';
+import { HomeComponent } from './views/home/home.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { HomeComponent } from './home/home.component';
     OpacityChangeDirective,
     UsersComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent
    ],
   imports: [
     BrowserModule,
