@@ -5,3 +5,10 @@ export interface User {
     address: string;
     age: number;
 }
+export interface ICarouselContext {
+    $implicit: string;
+    controller: {
+        next: () => void,
+        prev: () => void
+    };
+}
